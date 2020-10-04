@@ -1,5 +1,29 @@
 <div id="all-artists">
 
-    This is the artist search results page.
+    <h1>Artists search results</h1>
+
+    {{!-- 
+ name, 
+ image,  
+ button (or link) to show the albums for a particular artist on a new view (for now just create
+the button/link and we will take care of the rest in the next step).
+ --}}
+
+
+    {{#each artistsRes}}
+    <div class="artist-box">
+        <div class="picture">
+            <img src="{{this.images.2.url}}"
+                 alt="">
+        </div>
+        <div class="text">
+            <div class="name"> {{this.name}}</div>
+            <div class="album-link"> <a href=`/albums/{{this.id}}`>View albums</a> </div>
+
+        </div>
+    </div>
+    <hr>
+    {{/each}}
+
 
 </div>
